@@ -32,7 +32,7 @@ provider.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | environment | string | Name of the environment - commonly used for tagging |
-| billing_id | string | Billing ID for financial reporting - commonly used for tagging |
+| billingid | string | Billing ID for financial reporting - commonly used for tagging |
 | Customer | string | Customer Name - commonly used for tagging |
 | project | string | Project for financial reporting - commonly used for tagging |
 | workspaces | map | Map of Terraform workspaces to uses, e.g. "dev or prod" |
