@@ -2,3 +2,5 @@ setenv.sh
 setenv.ps1
 .terraform
 .terraform.*
+terraform.tfstate
+terraform.tfstate.*
