@@ -8,12 +8,16 @@ output "environment" {
   value = local.environment
 }
 
-output "billing_id" {
-  value = local.billing_id
+output "billingid" {
+  value = local.billingid
 }
 
 output "project" {
   value = local.project
+}
+
+output "customer" {
+  value = local.customer
 }
 
 output "workspaces" {

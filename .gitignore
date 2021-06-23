@@ -1,2 +1,4 @@
 setenv.sh
 setenv.ps1
+.terraform
+.terraform.*

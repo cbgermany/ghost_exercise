@@ -16,10 +16,8 @@ locals {
   workspaces = lookup(
     {
       # Workspces will be default for development and prod for production.
-      default = {
-        default = "default"
-        prod    = "prod"
-      }
+      default = "default"
+      prod    = "prod"
     },
     terraform.workspace
   )
@@ -30,11 +28,11 @@ locals {
     {
       default = {
           default = "UK South" # Location for the Development resources
-          prod    = "UK South" # Location for the Prod resources
+          dr      = "UK West"  # Location for the Development DR resources
       }
-      dr = {
-          default = "UK West"  # Location for the Development DR resources
-          prod    = "UK West"  # Location for the Prod DR resources
+      prod = {
+          default = "UK South"  # Location for the Prod resources
+          dr      = "UK West"  # Location for the Prod DR resources
       }
     },
     terraform.workspace
@@ -65,7 +63,7 @@ locals {
     terraform.workspace
   )
 
-  Billing_id = lookup(
+  billingid = lookup(
     {
       default = "Charge Code 001"
       prod    = "Charge Code 002"
@@ -99,7 +97,7 @@ locals {
 
   tags = {
     Environment   = local.environment
-    BillingID     = local.billing_id
+    BillingID     = local.billingid
     Project       = local.project
     Customer     = local.customer
     Application  = local.application
