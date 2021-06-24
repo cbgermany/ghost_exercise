@@ -16,6 +16,6 @@ provider.
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | client_id | string | The client_id of the service principal |
-| client_secret | The password for thr Service Principal, don't loose it |
+| client_secret | string | The password for thr Service Principal, don't loose it |
 | tenant_id| string | The tenant_id for this subscription |
 | subscription_id | string | The Subscription id for this Azure subscription |

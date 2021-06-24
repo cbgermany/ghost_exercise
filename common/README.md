@@ -39,3 +39,6 @@ provider.
 | locations | map | Map of Azure locations to uses, e.g. "UK South" |
 | resource_groups | map | Map of resource group names to use, e.g. "Ghost" |
 | tags | map | Map of tags common to all resources |
+| vnet_name | string | The vnet_name dependant on the workspace |
+| address_space | string | The CIDR block for the VNET dependant on the workspace |
+| subnet_cidr | map | Cidr block ranges for the subnets |
