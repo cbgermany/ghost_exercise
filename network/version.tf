@@ -12,7 +12,10 @@ terraform {
       resource_group_name  = "GhostTerraformRg"
       storage_account_name = "ghostterraformstate"
       container_name       = "tfstate"
-      key                  = "landscape.terraform.tfstate"
+      key                  = "network.terraform.tfstate"
   }
 }
 
+provider "azurerm" {
+  features {}
+}

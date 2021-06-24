@@ -55,6 +55,39 @@ locals {
     terraform.workspace
   )
 
+  # The name of the primary VNET
+  vnet_name = lookup(
+    {
+      default = "dev_primary_vnet"
+      prod    = "prod_primary_vnet"
+    },
+    terraform.workspace
+  )
+
+  address_apace = lookup(
+    {
+      # VNET CIDR blocks
+      default = "10.0.0.0/20"
+      prod    = "10.1.0.0/20"
+    },
+    terraform.workspace
+  )
+
+  # Subnet CIDR blocks for dev/test abd production
+  subnets_cidr = lookup(
+    {
+      default = {
+        FrontEnd = "10.0.0.0/24"
+        BackEnd  = "10.0.1.0/24"
+      }
+      prod = {
+        FrontEnd = "10.1.0.0/24"
+        BackEnd  = "10.1.0.0/24"
+      }
+    },
+    terraform.workspace
+  )
+
   environment = lookup(
     {
       default = "Dev"

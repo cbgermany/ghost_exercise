@@ -36,3 +36,14 @@ output "tags" {
   value = local.tags
 }
 
+output "vnet_name" {
+  value = local.vnet_name
+}
+
+output "address_space" {
+  value = local.address_apace
+}
+
+output "subnets_cidr" {
+  value = local.subnets_cidr
+}
