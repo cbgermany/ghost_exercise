@@ -5,6 +5,6 @@ build_subnet_name = "FrontEnd"
 build_vnet_name = "dev_primary_vnet"
 build_vnet_resource_group_name = "Ghostnetwork"
 image_resource_group_name = "GhostRG"
-image_offer = "UbuntuServer"
+
 
 
