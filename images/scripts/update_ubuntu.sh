@@ -9,3 +9,8 @@ fi
 
 # Update installed packages
 sudo apt-get upgrade -y
+if [[ $? != 0 ]]
+then
+    echo "Error: Failed to upgrade the Ubuntu updates, configuration will now stop"
+    exit 1
+fi
