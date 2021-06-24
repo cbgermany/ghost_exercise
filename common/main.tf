@@ -82,7 +82,7 @@ locals {
       }
       prod = {
         FrontEnd = "10.1.0.0/24"
-        BackEnd  = "10.1.0.0/24"
+        BackEnd  = "10.1.1.0/24"
       }
     },
     terraform.workspace
