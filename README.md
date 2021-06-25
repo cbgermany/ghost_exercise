@@ -28,7 +28,7 @@ This section creted the VNETs for development and production
 * **rbac**:
 This section contains the Role Based Access Control scripts required to create the service principals that are then used in the automation.
 
-* **setuo**:
+* **setup**:
 Contains scripts not stored in git that hold the eb=nvironment credentials
 
 
