@@ -4,17 +4,20 @@ instructions detailed at https://ghost.org/docs/install/ubuntu/#install-ghost
 
 The packer module will provision an Ubuntu 20_04-lts from Azure Marketplace and the scripts will then perform the following:
 
-- Create a ghostadmin user
 - Update the Ubuntu patches
 - Install Nginx
-- Install MySql
-- Assign a password to the mysql root user
 - Install node.js
 - Install Ghost-Cli
-- Install Ghost
 
 # Validate Packer
 packer validate -force -var-file=./var_files/dev.pkrvars.hcl ghost.pkr.hcl
 
 # Run Packer
 packer build -force -var-file=./var_files/dev.pkrvars.hcl ghost.pkr.hcl
+
+# Notes
+Typical build time for this should be arount 5 to 6 minutes.
+
+The base image will then be used in Azure Auto Scale configuration.
+
+Note MySQL is not installed on this image as Azure MySQL will be used as the database.

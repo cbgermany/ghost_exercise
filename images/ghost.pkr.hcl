@@ -152,13 +152,10 @@ build {
   # Execute the following scripts to configure the VM
   provisioner "shell" {
     scripts = [
-      "scripts/create_user.sh",
       "scripts/update_ubuntu.sh",
       "scripts/install_nginx.sh",
-      "scripts/install_mysql.sh",
       "scripts/install_nodejs.sh",
       "scripts/install_ghost-cli.sh",
-      "scripts/install_ghost.sh",
       "scripts/deprovision.sh"
     ]
   }

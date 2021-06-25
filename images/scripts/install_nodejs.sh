@@ -1,3 +1,5 @@
+#!/bin/bash -e
+
 # Add the NodeSource APT repository for Node 14
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash
 
