@@ -1,5 +1,6 @@
 module "ghost_scale_set" {
   source = "../../modules/Terraform-scale-set"
+  #source = "git::https://github.com/cbgermany/Terraform-scale-set.git?ref=v0.1"
 
   name            = format("%s-%s", data.terraform_remote_state.common.outputs.environment, "ghostvm")
   location        = data.terraform_remote_state.common.outputs.location.default
@@ -15,7 +16,7 @@ module "ghost_scale_set" {
   unix_admin = "unixadmin"
   public_key = "to get"
 
-  subnet_id = "1"
+  subnet_id = "to get"
 
   common_tags = data.terraform_remote_state.common.outputs.tags
 
