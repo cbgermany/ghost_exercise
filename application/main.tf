@@ -14,7 +14,7 @@ module "ghost_scale_set" {
   sku       = "Standard_D2s_v3"
   instances = 1
 
-  admin_user     = "unixadmin"
+  admin_user     = "ghostadmin"
   admin_password = data.azurerm_key_vault_secret.unix_admin_pass.value
 
   subnet_id = data.terraform_remote_state.network.outputs.subnets.subnet-1.id

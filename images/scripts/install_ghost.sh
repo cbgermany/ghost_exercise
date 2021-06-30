@@ -1,5 +1,5 @@
 # Create directory: Change `sitename` to whatever you like
-sudo mkdir -p /var/www/sitename
+sudo mkdir -p /var/www/blog
 
 if [[ $? != 0 ]]
 then
@@ -8,7 +8,7 @@ then
 fi
 
 # Set directory owner: Replace <user> with the name of your user
-sudo chown ghostadmin:ghostadmin /var/www/sitename
+sudo chown ghostadmin:ghostadmin /var/www/blog
 if [[ $? != 0 ]]
 then
     echo "Error: Failed to set ownership for ghost, configuration will now stop"
@@ -16,7 +16,7 @@ then
 fi
 
 # Set the correct permissions
-sudo chmod 775 /var/www/sitename
+sudo chmod 775 /var/www/blog
 if [[ $? != 0 ]]
 then
     echo "Error: Failed to set permissions for ghost, configuration will now stop"
@@ -24,6 +24,6 @@ then
 fi
 
 # Then navigate into it
-cd /var/www/sitename
+cd /var/www/blog
 
 
