@@ -22,13 +22,17 @@ This section created the MySql database
 * **images**:
 This section contains a packer project to create the Ubuntu imge that will be used in the Azure Scale Sets.
 
+* **key-vault**:
+This section creates the Key Vault and access policies for the password secrets
+
 * **network**:
-This section creted the VNETs for development and production
+This section creates the VNETs for development and production
 
 * **rbac**:
 This section contains the Role Based Access Control scripts required to create the service principals that are then used in the automation.
 
 * **setup**:
 Contains scripts not stored in git that hold the eb=nvironment credentials
+
 
 
