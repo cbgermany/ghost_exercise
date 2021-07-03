@@ -1,10 +1,11 @@
 # Create the key vault and add owner and service principals access to keys and secrets
 module "key-vault" {
-    source = "../../modules/Terraform-key-vault"
+    source = "git::https://github.com/cbgermany/Terraform-key-vault.git?ref=v0.3"
+    #source = "../../modules/Terraform-key-vault"
 
-    resource_group = "testrg"
+    resource_group = "GhostRG"
     location       = data.terraform_remote_state.common.outputs.location.default
-    name           = "ghosttestkeyvault"
+    name           = "GhostSecrets"
     tenant_id      = data.azurerm_client_config.current.tenant_id
 
     access_policies = {
@@ -17,7 +18,7 @@ module "key-vault" {
       ghost_app  = {
         object_id = data.azuread_service_principal.automation_sp.object_id
         keys = ["get","list"]
-        secrets = ["set", "get", "list"]
+        secrets = ["set", "get", "list","delete"]
       }
     }
 
