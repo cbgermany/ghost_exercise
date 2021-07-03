@@ -32,7 +32,7 @@ This section creates the VNETs for development and production
 This section contains the Role Based Access Control scripts required to create the service principals that are then used in the automation.
 
 * **setup**:
-Contains scripts not stored in git that hold the eb=nvironment credentials
+Contains scripts not stored in git that hold the environment credentials
 
 
 
