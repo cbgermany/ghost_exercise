@@ -22,6 +22,18 @@ data "terraform_remote_state" "network" {
   }
 }
 
+# MySQL Configuration
+data "terraform_remote_state" "database" {
+  backend   = "azurerm"
+  workspace = terraform.workspace
+  config    = {
+    resource_group_name  = "GhostTerraformRg"
+    storage_account_name = "ghostterraformstate"
+    container_name       = "tfstate"
+    key                  = "database.terraform.tfstate"
+  }
+}
+
 # Access the key vault to retrieve secrets
 data "azurerm_key_vault" "keyvault" {
   name                = var.keyvault_name

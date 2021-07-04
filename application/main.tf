@@ -19,6 +19,12 @@ module "ghost_scale_set" {
 
   subnet_id = data.terraform_remote_state.network.outputs.subnets.subnet-1.id
 
+  # Parameters for Cloudinit to install Ghost
+  url       = ""
+  admin_url = ""
+  endpoint  = data.terraform_remote_state.database.outputs.mysql_server.name
+  database  = data.terraform_remote_state.database.outputs.mysql_database.name
+
   common_tags = data.terraform_remote_state.common.outputs.tags
 
 }
