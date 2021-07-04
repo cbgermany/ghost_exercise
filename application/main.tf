@@ -9,7 +9,7 @@ module "ghost_scale_set" {
   image_name           = "Ghost_Ubuntu_20_04_lts_Image"
   image_resource_group = "GhostRG"
 
-  application_port = "443"
+  application_port = "80"
 
   sku       = "Standard_D2s_v3"
   instances = 1
@@ -20,8 +20,8 @@ module "ghost_scale_set" {
   subnet_id = data.terraform_remote_state.network.outputs.subnets.subnet-1.id
 
   # Parameters for Cloudinit to install Ghost
-  url       = ""
-  admin_url = ""
+  #url       = ""
+  #admin_url = ""
   endpoint  = data.terraform_remote_state.database.outputs.mysql_server.name
   database  = data.terraform_remote_state.database.outputs.mysql_database.name
 
