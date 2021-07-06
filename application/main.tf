@@ -1,3 +1,12 @@
+#Generate a random string for the domain name as I don't want to use a real domain for this exercise
+#Will use the Microsoft default
+resource "random_string" "fqdn" {
+  length  = 6
+  special = false
+  upper   = false
+  number  = false
+}
+
 module "ghost_scale_set" {
   source = "../../modules/Terraform-scale-set"
   #source = "git::https://github.com/cbgermany/Terraform-scale-set.git?ref=v0.1"
@@ -5,6 +14,8 @@ module "ghost_scale_set" {
   name            = format("%s-%s", data.terraform_remote_state.common.outputs.environment, "ghost")
   location        = data.terraform_remote_state.common.outputs.location.default
   resource_group  = data.terraform_remote_state.common.outputs.resource_groups.default
+
+  domain_name_label    = random_string.fqdn.result
 
   image_name           = "Ghost_Ubuntu_20_04_lts_Image"
   image_resource_group = "GhostRG"
@@ -20,9 +31,12 @@ module "ghost_scale_set" {
   subnet_id = data.terraform_remote_state.network.outputs.subnets.subnet-1.id
 
   # Parameters for Cloudinit to install Ghost
-  #url       = ""
-  #admin_url = ""
-  endpoint  = data.terraform_remote_state.database.outputs.mysql_server.name
+  url       = format("%s.%s.%s", random_string.fqdn.result, 
+                                 data.terraform_remote_state.common.outputs.location.default,
+                                 "cloudapp.azure.com")
+  admin_url = ""
+  endpoint  = format("%s.%s", data.terraform_remote_state.database.outputs.mysql_server.name, 
+                              "mysql.database.azure.com")
   database  = data.terraform_remote_state.database.outputs.mysql_database.name
 
   common_tags = data.terraform_remote_state.common.outputs.tags
