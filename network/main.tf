@@ -20,7 +20,12 @@ module "vnet" {
         name              = "BackEnd",
         cidr              = data.terraform_remote_state.common.outputs.subnets_cidr.BackEnd,
         service_endpoints = []
-      }
+      },
+      subnet-3 = {
+        name              = "AzureBastionSubnet",
+        cidr              = data.terraform_remote_state.common.outputs.subnets_cidr.AzureBastionSubnet,
+        service_endpoints = []
+      },      
     }
 
     create_ddos     = false
