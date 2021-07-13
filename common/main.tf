@@ -27,12 +27,12 @@ locals {
   location = lookup(
     {
       default = {
-          default = "UK South" # Location for the Development resources
-          dr      = "UK West"  # Location for the Development DR resources
+          default = "uksouth" # Location for the Development resources
+          dr      = "ukwest"  # Location for the Development DR resources
       }
       prod = {
-          default = "UK South"  # Location for the Prod resources
-          dr      = "UK West"  # Location for the Prod DR resources
+          default = "uksouth"  # Location for the Prod resources
+          dr      = "ukwest"  # Location for the Prod DR resources
       }
     },
     terraform.workspace

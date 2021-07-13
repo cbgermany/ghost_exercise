@@ -156,6 +156,7 @@ build {
       "scripts/install_nginx.sh",
       "scripts/install_nodejs.sh",
       "scripts/install_ghost-cli.sh",
+      "scripts/amend_sshd.sh",
       "scripts/deprovision.sh"
     ]
   }
