@@ -2,7 +2,7 @@
 
 module "database" {
   #source = "../../modules/Terraform-mysql"
-  source = "git::https://github.com/cbgermany/Terraform-mysql.git?ref=v0.2"
+  source = "git::https://github.com/cbgermany/Terraform-mysql.git?ref=v1.0"
 
   mysql_server_name = lower(format("%s-%s", data.terraform_remote_state.common.outputs.environment, "ghostsvr"))
   location          = data.terraform_remote_state.common.outputs.location.default
