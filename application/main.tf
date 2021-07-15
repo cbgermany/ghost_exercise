@@ -20,9 +20,6 @@ module "ghost_scale_set" {
   image_name           = "Ghost_Ubuntu_20_04_lts_Image"
   image_resource_group = "GhostRG"
 
-  # Note as of 2019 ghost will not install unless ssl is used
-  application_port = "443"
-
   sku       = "Standard_D2s_v3"
   instances = 1
 
@@ -43,6 +40,8 @@ module "ghost_scale_set" {
   endpoint  = format("%s.%s", data.terraform_remote_state.database.outputs.mysql_server.name, 
                               "mysql.database.azure.com")
   database  = data.terraform_remote_state.database.outputs.mysql_database.name
+
+  sslemail = "myemail.com"
 
   common_tags = data.terraform_remote_state.common.outputs.tags
 
