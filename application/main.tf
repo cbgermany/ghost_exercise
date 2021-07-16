@@ -41,7 +41,7 @@ module "ghost_scale_set" {
                               "mysql.database.azure.com")
   database  = data.terraform_remote_state.database.outputs.mysql_database.name
 
-  sslemail = "myemail.com"
+  sslemail = "example@myemail.com"
 
   common_tags = data.terraform_remote_state.common.outputs.tags
 

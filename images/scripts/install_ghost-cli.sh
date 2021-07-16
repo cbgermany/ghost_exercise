@@ -5,3 +5,4 @@ then
     echo "Error: Failed to install ghost-cli, configuration will now stop"
     exit 1
 fi
+
