@@ -11,7 +11,7 @@ The repo is organised into seperate folders that have been created for specific 
 Contains the code to launch an Azure Virtual Machine Scale Set that will run the Ghost application.
 
 * **begin**:
-Sets up an initial resource group and storage account.  This project is using terraform state to facilitate the project being structured and worked on indeoendantly.  This section sets up the initial storage account that the other parts of the project then consume.
+Sets up an initial resource group and storage account.  This project is using terraform state to facilitate the project being structured and worked on independantly.  This section sets up the initial storage account that the other parts of the project then consume.
 
 * **bastion**: 
 Creates a bastion server, run this after the Network resources have been created.
