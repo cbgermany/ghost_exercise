@@ -8,8 +8,8 @@ resource "random_string" "fqdn" {
 }
 
 module "ghost_scale_set" {
-  source = "../../modules/Terraform-scale-set"
-  #source = "git::https://github.com/cbgermany/Terraform-scale-set.git?ref=v0.1"
+  #source = "../../modules/Terraform-scale-set"
+  source = "git::https://github.com/cbgermany/Terraform-scale-set.git?ref=v0.2"
 
   name            = format("%s-%s", data.terraform_remote_state.common.outputs.environment, "ghost")
   location        = data.terraform_remote_state.common.outputs.location.default
