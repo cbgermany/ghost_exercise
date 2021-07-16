@@ -20,7 +20,7 @@ Creates a bastion server, run this after the Network resources have been created
 Contains the initial set of references that will be used throughout the project such as resource group details, locations etc.  Sets up the values to use Terraform workspaces to allow for development and production environments to share the same code.
 
 * **database**:
-This section created the MySql database
+This section creates the MySql database
 
 * **images**:
 This section contains a packer project to create the Ubuntu imge that will be used in the Azure Scale Sets.
